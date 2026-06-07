@@ -73,28 +73,6 @@ Responsibilities:
 
 Stores application data in MySQL.
 
----
-
-# 📸 Screenshots
-
-## Homepage
-
-![Homepage](screenshots/homepage.png)
-
-## Product Management
-
-![Products](screenshots/product-page.png)
-
-## Cart System
-
-![Cart](screenshots/cart.png)
-
-## Orders Management
-
-![Orders](screenshots/orders.png)
-
----
-
 # Features
 
 ### User Features
