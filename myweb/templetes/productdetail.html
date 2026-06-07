@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>{{ product.1 }}</title>
+
+    <link rel="stylesheet" href="/static/css/productdetail.css">
+
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <a href="/homepage" class="back-btn">
+            ← Continue Shopping
+        </a>
+
+        <div class="product-card">
+
+            <div class="left-section">
+
+                <img src="/media/{{ product.4 }}" onerror="this.src='/static/images/defaultplant.jpg'">
+
+            </div>
+
+            <div class="right-section">
+
+                <h1>{{ product.1 }}</h1>
+
+                <h2>₹{{ product.3 }}</h2>
+
+                <p class="description">
+                    {{ product.2 }}
+                </p>
+
+                <div class="details">
+
+                    <p>
+                        <strong>Plant Size:</strong>
+                        {{ product.6 }}
+                    </p>
+
+                    <p>
+                        <strong>Plant Weight:</strong>
+                        {{ product.7 }}
+                    </p>
+
+                    <p>
+                        <strong>Soil Type:</strong>
+                        {{ product.8 }}
+                    </p>
+
+                </div>
+
+                <a href="/master/addtocart/{{ product.0 }}">
+                    <button>
+                        Add To Cart
+                    </button>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background-image: url("/static/images/nature.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: Arial, sans-serif;
+}
+
+.success-message {
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    font-weight: 600;
+
+    color: #d7b26d;
+
+    background: rgba(0, 0, 0, .35);
+
+    border: 1px solid rgba(215, 178, 109, .3);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 15px rgba(215, 178, 109, .15);
+}
+
+.back-home-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    text-decoration: none;
+
+    color: #d7b26d;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    background: rgba(0, 0, 0, .45);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(215, 178, 109, .25);
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 20px rgba(215, 178, 109, .08);
+
+    transition: .3s ease;
+}
+
+.back-home-btn:hover {
+    background: #d7b26d;
+    color: #0d120d;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(215, 178, 109, .25);
+}
+
+.back-home-btn i {
+    font-size: .9rem;
+}
+
+.overlay {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+.form-card {
+
+    width: 700px;
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    color: white;
+}
+
+.form-card h1 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.form-group {
+
+    margin-bottom: 20px;
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 16px;
+}
+
+.form-group textarea {
+
+    resize: none;
+
+    height: 120px;
+}
+
+.submit-btn {
+
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #56d3a6;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}

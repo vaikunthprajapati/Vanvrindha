@@ -1,0 +1,608 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanvrindha (Vaikunth)</title>
+    <link rel="stylesheet" href="/static/css/homepage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <body>
+        <div class="site-video-wrap">
+            <video autoplay muted loop playsinline>
+                <source src="/static/videos/vanvrindha main background video.mp4" type="video/mp4">
+            </video>
+            <div class="site-video-overlay"></div>
+        </div>
+
+        <header class="sky-vine">
+            <div class="vine-content">
+                <div class="sprout-logo-patch">
+                    <a href="#" class="sprout-link">
+
+                        <img src="/static/images/V logo Vanvrindha vine.png" alt="Vanvrindha Logo" class="leaf-icon">
+
+                        <span class="plant-name">Vanvrindha</span>
+
+                    </a>
+                </div>
+                <nav class="branch-nav">
+                    <a href="#story-section" class="branch-link">Our Philosophy</a>
+                    <a href="#section-header" class="branch-link">Our Superpowers</a>
+                    <a href="#chat-with-us" class="branch-link">Contact Us</a>
+                </nav>
+                <div class="gardener-actions">
+
+                    {% if user.is_authenticated %}
+
+                    {% if user.is_superuser %}
+
+                    <div class="admin-tools">
+                        <a href="/master/addproduct">Add Product</a>
+                        <a href="{% url 'products' %}">Products</a>
+                        <a href="/master/orders">Orders</a>
+                    </div>
+
+                    {% endif %}
+
+                    <span class="user-welcome">
+                        Welcome {{ user.username }}
+                    </span>
+
+                    <a href="{% url 'logout' %}" class="logout-btn">
+                        Logout
+                    </a>
+
+                    {% else %}
+
+                    <a href="{% url 'signin' %}" class="login-btn">
+                        Sign In
+                    </a>
+
+                    <a href="{% url 'signup' %}" class="signup-btn">
+                        Sign Up
+                    </a>
+
+                    {% endif %}
+
+                    <a href="/master/cart" class="cart-link">
+
+                        <i class="fas fa-shopping-cart"></i>
+
+                        <span class="cart-badge">
+                            {{ cart_count }}
+                        </span>
+
+                    </a>
+
+                </div>
+            </div>
+        </header>
+
+        <main class="big-green-area">
+            <div class="little-sprout-section">
+                <img src="/static/images/baby-plant.png" alt="background" class="little-sprout-pic">
+                <div class="little-sprout-stuff">
+                    <h1> Be the change you want to see in your office space.</h1>
+                    <p>We create a cozy and green atmosphere for your workspace.</p>
+                    <div class="dig-here-box">
+                        <a href="#plant-store" class="dig-deeper-btn">
+                            <button>Explore Collection</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="plant-story-box">
+                    <div class="tiny-details">
+                        <h3>Details :</h3>
+                        <p>
+                            Pict by : Pinterest<br>
+                            Created by : Vaikunth <br>
+                            Typeface : Montserrat <br>
+                            Colour : Green maint <br>
+                        </p>
+                    </div>
+
+                    <div class="filter-choices">
+
+                        <div class="leaf-card active" id="filter1" onclick="activateFilter(1)">
+                            <img src="/static/images/leaf4.jpg">
+                        </div>
+                        <div class="leaf-card" id="filter2" onclick="activateFilter(2)">
+                            <img src="/static/images/leaf4.jpg">
+                        </div>
+
+                        <div class="leaf-card" id="filter3" onclick="activateFilter(3)">
+                            <img src="/static/images/leaf4.jpg">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <section class="hero-botanical-section">
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Greening of
+                    <span>Office Spaces</span>
+                </h1>
+
+                <div class="lightroom-section">
+
+                    <h3>Choose Aesthetic Mood</h3>
+
+                    <div class="filter-choices">
+
+                        <div class="leaf-card">
+                            <img src="/static/images/leaf6.jpg">
+                        </div>
+
+                        <div class="leaf-card">
+                            <img src="/static/images/leaf2.jpg">
+                        </div>
+
+                        <div class="leaf-card">
+                            <img src="/static/images/leaf1.jpg">
+                        </div>
+
+                        <div class="leaf-card">
+                            <img src="/static/images/leaf3.jpg">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <a href="#plant-store" class="catalog-btn">
+                    <span>Open Catalog</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="hero-plant-showcase">
+
+                <div class="bonsai-card">
+
+                    <div class="bonsai-glow"></div>
+
+                    <img src="/static/images/beautiful-bonsai-removebg-preview.png" alt="Bonsai" class="bonsai-image">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="story-section" id="story-section">
+
+            <div class="story-header">
+
+                <span class="section-eyebrow">
+                    OUR PHILOSOPHY
+                </span>
+
+                <h2 class="story-heading">
+                    Bringing Nature Into
+                    <span>Modern Spaces</span>
+                </h2>
+
+            </div>
+
+            <div class="story-layout">
+
+                <!-- LEFT SIDE -->
+
+                <div class="story-left">
+
+                    <div class="story-intro-card">
+
+                        <h3>
+                            We transform offices into
+                            inspiring environments.
+                        </h3>
+
+                        <p>
+                            Every workspace deserves calm, beauty and life.
+                            Through carefully curated botanical installations,
+                            we create environments where people feel energized,
+                            creative and connected to nature.
+                        </p>
+
+                    </div>
+
+                    <div class="story-main-card">
+
+                        <div class="story-badge">
+                            10+ YEARS OF EXPERIENCE
+                        </div>
+
+                        <h2>
+                            We are ready to bring your vision to life.
+                        </h2>
+
+                        <p>
+                            For more than a decade, Vanvrindha has been helping
+                            businesses, homes and hospitality spaces create
+                            healthier, more inspiring environments through
+                            thoughtfully selected plants and botanical design.
+
+                            Our projects combine aesthetics, sustainability and
+                            long-term care to ensure every green installation
+                            continues to thrive for years.
+                        </p>
+
+                        <div class="story-socials">
+
+                            <a href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+
+                        </div>
+
+                        <a href="#contact" class="story-btn">
+                            Start Your Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDE -->
+
+                <div class="story-right">
+
+                    <div class="story-video-box">
+
+                        <video autoplay muted loop playsinline>
+                            <source src="/static/videos/mountain - ROTATE - SPEED - Videobolt.net.mp4" type="video/mp4">
+                        </video>
+
+                        <div class="video-overlay"></div>
+
+                    </div>
+
+                    <div class="story-stats">
+
+                        <div class="stat-card">
+
+                            <div class="stat-number">
+                                10+
+                            </div>
+
+                            <div class="stat-text">
+                                Years Experience
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <div class="stat-number">
+                                500+
+                            </div>
+
+                            <div class="stat-text">
+                                Projects Completed
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <div class="stat-number">
+                                99%
+                            </div>
+
+                            <div class="stat-text">
+                                Client Satisfaction
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="story-links-card">
+
+                        <h4>
+                            Explore More
+                        </h4>
+
+                        <div class="story-links">
+
+                            <a href="#">
+                                Learn More
+                            </a>
+
+                            <a href="#">
+                                Contact Us
+                            </a>
+
+                            <a href="#">
+                                Our Projects
+                            </a>
+
+                            <a href="#">
+                                Testimonials
+                            </a>
+
+                            <a href="#">
+                                FAQ
+                            </a>
+
+                        </div>
+
+                        <p>
+                            Our mission is simple:
+                            create environments where nature and design
+                            work together to improve wellbeing, productivity
+                            and everyday happiness.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="the-plant-store" id="plant-store">
+
+            <div class="store-stuff">
+                <div class="filter-bar">
+
+                    <form method="GET" action="/homepage">
+
+                        <input type="text" name="search" placeholder="🔍 Search plants..."
+                            value="{{ request.GET.search }}" class="search-input">
+
+                        <div class="filter-row">
+
+                            <select name="category" class="category-select">
+
+                                <option value="">
+                                    All Categories
+                                </option>
+
+                                {% for c in categories %}
+
+                                <option value="{{ c.0 }}">
+                                    {{ c.1 }}
+                                </option>
+
+                                {% endfor %}
+
+                            </select>
+
+                            <button type="submit" class="filter-btn">
+                                Apply
+                            </button>
+
+                            <a href="/homepage" class="clear-btn">
+                                Clear
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="plant-list">
+
+                    {% for p in products %}
+                    <a href="/master/product/{{ p.0 }}">
+
+                        <div class="plant-box">
+
+                            <img src="/media/{{ p.4 }}" onerror="this.src='/static/images/defaultplant.jpg'">
+
+                            <p class="plant-buddy-name">
+                                {{ p.1 }}
+                            </p>
+
+                            <div class="plant-bottom-row">
+
+                                <span class="plant-price-tag">
+                                    ₹{{ p.3 }}
+                                </span>
+
+                                <button class="cart-btn">
+                                    Add To Cart
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </a>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+
+        <section class="our-superpowers">
+
+            <div class="section-header" id="section-header">
+                <span class="section-eyebrow">
+                    WHY VANVRINDHA
+                </span>
+
+                <h2 class="power-title">
+                    Crafted with care. Designed for nature.
+                </h2>
+
+                <p class="power-subtitle">
+                    Every space deserves a living touch.
+                    Here's why clients choose Vanvrindha.
+                </p>
+            </div>
+
+            <div class="superpower-grid">
+
+                <div class="power-card">
+                    <div class="power-number">01</div>
+
+                    <h3 class="power-word">
+                        Premium Quality
+                    </h3>
+
+                    <p class="power-words">
+                        Carefully selected plants and décor pieces chosen
+                        for long-term beauty, health and elegance.
+                    </p>
+                </div>
+
+                <div class="power-card">
+                    <div class="power-number">02</div>
+
+                    <h3 class="power-word">
+                        Fast Execution
+                    </h3>
+
+                    <p class="power-words">
+                        From planning to installation, every project is
+                        delivered efficiently without compromising quality.
+                    </p>
+                </div>
+
+                <div class="power-card">
+                    <div class="power-number">03</div>
+
+                    <h3 class="power-word">
+                        Curated Variety
+                    </h3>
+
+                    <p class="power-words">
+                        Discover a diverse collection of rare plants,
+                        statement pieces and botanical experiences.
+                    </p>
+                </div>
+
+                <div class="power-card">
+                    <div class="power-number">04</div>
+
+                    <h3 class="power-word">
+                        Nationwide Reach
+                    </h3>
+
+                    <p class="power-words">
+                        Whether it's a home, office or commercial space,
+                        we bring nature wherever you are.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="find-us-section">
+
+            <div class="find-us-card">
+
+                <div class="find-us-content">
+
+                    <span class="find-eyebrow">
+                        VISIT OUR NURSERY
+                    </span>
+
+                    <h2 class="find-title">
+                        Discover Vanvrindha
+                    </h2>
+
+                    <div class="find-divider"></div>
+
+                    <p class="find-description">
+                        Experience our collection in person and immerse yourself
+                        in a space where nature, design and craftsmanship come together.
+                        Visit our nursery to explore rare botanical selections and
+                        receive personalized guidance.
+                    </p>
+
+                    <a href="/master/location" class="location-btn">
+                        <span>Find Us Near You</span>
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+                <div class="map-preview">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.2088877060314!2d77.37306247617569!3d23.308178678974695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c672543494dc5%3A0x9622a17779963c9a!2sSanskriti%20City!5e0!3m2!1sen!2sin!4v1780680459755!5m2!1sen!2sin"
+                        loading="lazy">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="chat-with-us" id="chat-with-us">
+            <div class="chat-left">
+                <h2 class="chat-title">Shall we discuss the project details?</h2>
+            </div>
+            <div class="chat-right">
+                <form action="#" class="chat-form">
+                    <input type="text" placeholder="Name" class="chat-box-input">
+                    <input type="tel" placeholder="Phone" class="chat-box-input">
+                    <textarea placeholder="Comment" class="chat-box-area"></textarea>
+                    <button type="submit" class="send-it-button">Send</button>
+                </form>
+            </div>
+        </section>
+        <script>
+
+            const hero = document.querySelector('.little-sprout-pic');
+
+            function activateFilter(index) {
+
+                const images = [
+                    "/static/images/leaf1.jpg",
+                    "/static/images/leaf2.jpg",
+                    "/static/images/leaf3.jpg"
+                ];
+
+                hero.src = images[index - 1];
+
+                document.querySelectorAll('.leaf-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+
+                document.getElementById('filter' + index)
+                    .classList.add('active');
+            }
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,2330 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
+    color: #ffffff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.page-body {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.site-video-bg { display: none; }
+
+.site-video-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.site-video-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65) saturate(0.85);
+}
+
+.site-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 14, 10, 0.45);
+}
+
+/* All sections sit above the fixed video */
+.sky-vine {
+    z-index: 1000;
+}
+
+.big-green-area,
+.hero-botanical-section,
+.story-section,
+.the-plant-store,
+.our-superpowers,
+.find-us-section,
+.chat-with-us,
+.page-body {
+    position: relative;
+    z-index: 1;
+}
+
+.admin-tools{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    position: relative;
+    left: 735px;
+}
+
+.admin-tools a{
+    text-decoration:none;
+    font-size:.8rem;
+    color:#d7b26d;
+
+    border:1px solid rgba(215,178,109,.4);
+
+    background:rgba(215,178,109,.08);
+
+    padding:4px 14px;
+
+    border-radius:999px;
+
+    transition:.3s ease;
+}
+
+.admin-tools a:hover{
+    background:#d7b26d;
+    color:#0b120d;
+
+    transform:translateY(-2px);
+}
+
+/*
+    Top vine styles
+*/
+.sky-vine {
+
+    position: fixed;
+
+    top: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 96%;
+
+    height: 70px;
+
+    max-width: 1300px;
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(15px);
+
+    background: rgba(8, 12, 8, .55);
+
+    border: 1px solid rgba(184, 151, 90, .12);
+
+    z-index: 1000;
+}
+
+.vine-content {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 4px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sprout-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    gap: 14px;
+}
+
+.leaf-icon {
+    border-radius: 150px;
+    width: 55%;
+    position: relative;
+    top: -6px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 8px rgba(184, 151, 90, .5)) drop-shadow(0 0 20px rgba(184, 151, 90, .2));
+}
+
+.sprout-link:hover .leaf-icon {
+    transform: rotate(-6deg) scale(1.08);
+
+    filter:
+        drop-shadow(0 0 12px rgba(184, 151, 90, .7)) drop-shadow(0 0 30px rgba(184, 151, 90, .25));
+}
+
+.plant-name {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 2rem;
+
+    font-weight: 600;
+
+    color: #e8d2a0;
+
+    letter-spacing: .5px;
+
+    margin-left: -15px;
+
+    text-shadow:
+        0 0 20px rgba(184, 151, 90, .15);
+}
+
+.sprout-logo-patch {
+    width: 90px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    position: relative;
+}
+
+.sprout-logo-patch::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -6px;
+
+    left: 55px;
+
+    width: 70px;
+
+    height: 1px;
+
+    background: linear-gradient(90deg,
+            transparent,
+            #b8975a,
+            transparent);
+}
+
+.plant-list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.plant-list a:visited {
+    color: inherit;
+}
+
+.plant-list a:hover {
+    color: inherit;
+}
+
+.branch-nav {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 50px;
+}
+
+.branch-link {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.branch-link:hover {
+    color: #b8975a;
+}
+
+.logout-btn,
+.login-btn,
+.signup-btn {
+    background: #b8975a;
+}
+
+.gardener-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.cart-link {
+    text-decoration: none;
+    color: #b8975a;
+}
+
+.cart-badge {
+    background: #ddc08a;
+    color: black;
+    padding: 0px 5px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.pot-icon {
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.pot-icon:hover {
+    color: #6ee7b7;
+}
+
+/* ==========================================
+   HERO SHOWCASE SECTION
+========================================== */
+
+.big-green-area {
+    width: 100%;
+    padding: 120px 5% 80px;
+}
+
+.little-sprout-section {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 420px;
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    background: rgba(10, 18, 12, .55);
+
+    backdrop-filter: blur(24px);
+
+    border: 1px solid rgba(184, 151, 90, .18);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .45);
+}
+
+/* Background image */
+
+.little-sprout-pic {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(.8) saturate(1.15);
+
+    z-index: 1;
+}
+
+.little-sprout-section::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(10, 18, 12, .75) 0%,
+            rgba(10, 18, 12, .45) 50%,
+            rgba(10, 18, 12, .15) 100%);
+
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT CONTENT
+========================================== */
+
+.little-sprout-stuff {
+    position: relative;
+    z-index: 3;
+
+    width: 62%;
+
+    padding: 60px;
+}
+
+.little-sprout-section h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(48px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 300;
+
+    color: #f5f0e8;
+
+    max-width: 700px;
+
+    margin-bottom: 24px;
+}
+
+.little-sprout-section p {
+    max-width: 520px;
+
+    color: rgba(245, 240, 232, .75);
+
+    font-family: 'Jost', sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+}
+
+/* ==========================================
+   CTA ROW
+========================================== */
+
+.dig-here-box {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.dig-deeper-btn {
+    text-decoration: none;
+}
+
+.dig-deeper-btn button {
+    width: 180px;
+    height: 54px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #b8975a;
+
+    color: #1a2e1e;
+
+    font-family: 'Jost', sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .35s ease;
+}
+
+.dig-deeper-btn button:hover {
+    background: #d4b27a;
+
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   DETAILS PANEL
+========================================== */
+
+.plant-story-box {
+    position: relative;
+
+    z-index: 3;
+
+    width: 340px;
+
+    margin-right: 40px;
+
+    padding: 32px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, .05);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(184, 151, 90, .15);
+}
+
+.tiny-details h3,
+.leaf-filters h3 {
+    font-family: 'Jost', sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #b8975a;
+
+    margin-bottom: 18px;
+}
+
+.tiny-details p {
+    color: rgba(245, 240, 232, .65);
+
+    line-height: 1.8;
+
+    font-size: 13px;
+}
+
+/* ==========================================
+   FILTER PREVIEW
+========================================== */
+
+.filter-choices {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+.leaf-card {
+    width: 78px;
+
+    height: 100px;
+
+    position: relative;
+
+    bottom: 100px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(184, 151, 90, .15);
+
+    background: rgba(255, 255, 255, .03);
+
+    transition: .35s ease;
+}
+
+.leaf-card img {
+    width: 100%;
+    height: 72px;
+
+    object-fit: cover;
+}
+
+.leaf-card span {
+    display: block;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    padding-top: 6px;
+
+    color: rgba(245, 240, 232, .6);
+}
+
+.leaf-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #b8975a;
+}
+
+/* ==========================================
+   DOTS 
+========================================== */
+.dot-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #7d6a3d;
+    opacity: .4;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.dot:hover {
+    transform: scale(1.2);
+}
+
+.active-dot {
+    background: #b8975a;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(184, 151, 90, .6);
+}
+
+.leaf-card {
+    width: 90px;
+    height: 90px;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+
+    opacity: .45;
+
+    border: 1px solid rgba(184, 151, 90, .15);
+
+    transition: all .35s ease;
+}
+
+.leaf-card:hover {
+    opacity: .8;
+    transform: translateY(-4px);
+}
+
+.leaf-card.active {
+    opacity: 1;
+
+    transform: translateY(-6px);
+
+    border: 1px solid #b8975a;
+
+    box-shadow:
+        0 0 0 1px rgba(184, 151, 90, .25),
+        0 10px 30px rgba(184, 151, 90, .15);
+}
+
+.leaf-card.active::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    box-shadow: inset 0 0 20px rgba(184, 151, 90, .2);
+}
+
+.leaf-card {
+    position: relative;
+}
+
+/* ==========================================
+   BOTANICAL HERO SECTION
+========================================== */
+
+.hero-botanical-section {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 80px;
+    align-items: center;
+    padding: 120px 0;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(60px, 7vw, 110px);
+    line-height: .95;
+    font-weight: 300;
+    color: #f5f0e8;
+    margin-bottom: 28px;
+}
+
+.hero-title span {
+    display: block;
+    color: #d4b27a;
+    font-style: italic;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.lightroom-section h3 {
+    position: relative;
+    color: #d4b27a;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.filter-choices {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    position: relative;
+    top: 140px;
+}
+
+.leaf-card {
+    width: 110px;
+    background: rgba(12, 22, 14, .45);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(184, 151, 90, .15);
+    padding: 12px;
+    transition: .35s;
+    cursor: pointer;
+}
+
+.leaf-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(184, 151, 90, .4);
+}
+
+.leaf-card img {
+    width: 120px;
+    height: 95px;
+    object-fit: cover;
+}
+
+.leaf-card span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #f5f0e8;
+    font-size: 12px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.catalog-btn {
+    position: relative;
+    top: 130px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 34px;
+    text-decoration: none;
+    background: #b8975a;
+    color: #1a2e1e;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: .35s;
+}
+
+.catalog-btn:hover {
+    background: #d4b27a;
+    transform: translateX(5px);
+}
+
+/* =========================
+   BONSAI
+========================= */
+
+.hero-plant-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* KEEP THIS CARD */
+
+.bonsai-card {
+    position: relative;
+    width: 450px;
+    height: 520px;
+
+    background: rgba(12, 22, 14, .35);
+
+    backdrop-filter: blur(22px);
+
+    border: 1px solid rgba(184, 151, 90, .15);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .35);
+
+    transition: .4s;
+}
+
+.bonsai-card:hover {
+    transform:
+        translateY(-10px) rotateY(-4deg);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, .45);
+}
+
+/* floating glow */
+
+.bonsai-glow {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(184, 151, 90, .35),
+            transparent 70%);
+
+    filter: blur(50px);
+
+    bottom: 40px;
+}
+
+/* image */
+
+.bonsai-image {
+    width: 115%;
+    position: relative;
+    z-index: 2;
+
+    filter:
+        drop-shadow(0 20px 30px rgba(0, 0, 0, .4)) drop-shadow(0 0 25px rgba(95, 170, 80, .25));
+
+    transition: .4s;
+}
+
+.bonsai-card:hover .bonsai-image {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px) {
+
+    .hero-botanical-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .filter-choices {
+        justify-content: center;
+    }
+
+    .bonsai-card {
+        width: 380px;
+        height: 450px;
+    }
+}
+
+/* ==================================================
+   VANVRINDHA - STORY SECTION
+================================================== */
+
+.story-section {
+    width: 100%;
+    padding: 120px 0;
+    position: relative;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.story-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.story-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 5vw, 82px);
+    font-weight: 300;
+    color: #f5f0e8;
+    line-height: 1.1;
+}
+
+.story-heading span {
+    display: block;
+    color: #d4b27a;
+    font-style: italic;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* =========================
+   LEFT COLUMN
+========================= */
+
+.story-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Intro card */
+
+.story-intro-card {
+    background: rgba(12, 22, 14, .42);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(184, 151, 90, .15);
+    padding: 35px;
+    border-radius: 3px;
+}
+
+.story-intro-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #f5f0e8;
+    margin-bottom: 18px;
+}
+
+.story-intro-card p {
+    font-family: 'Jost', sans-serif;
+    color: rgba(255, 255, 255, .70);
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* Main card */
+
+.story-main-card {
+    background: rgba(12, 22, 14, .50);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(184, 151, 90, .15);
+    padding: 40px;
+    border-radius: 3px;
+}
+
+.story-badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid rgba(184, 151, 90, .25);
+    color: #d4b27a;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+}
+
+.story-main-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: #f5f0e8;
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+
+.story-main-card p {
+    color: rgba(255, 255, 255, .70);
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   SOCIALS
+========================= */
+
+.story-socials {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.story-socials a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid rgba(184, 151, 90, .20);
+    color: #d4b27a;
+    transition: .3s;
+}
+
+.story-socials a:hover {
+    background: #b8975a;
+    color: #1a2e1e;
+    transform: translateY(-4px);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.story-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 34px;
+    text-decoration: none;
+    background: #b8975a;
+    color: #1a2e1e;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: .35s;
+    width: fit-content;
+}
+
+.story-btn:hover {
+    background: #d4b27a;
+    transform: translateX(5px);
+}
+
+/* =========================
+   RIGHT COLUMN
+========================= */
+
+.story-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.story-video-box {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid rgba(184, 151, 90, .15);
+}
+
+.story-video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(12, 22, 14, .55),
+            rgba(12, 22, 14, .10));
+}
+
+/* =========================
+   STATS
+========================= */
+
+.story-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 28px 15px;
+    background: rgba(12, 22, 14, .42);
+    border: 1px solid rgba(184, 151, 90, .15);
+    backdrop-filter: blur(20px);
+}
+
+.stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #d4b27a;
+    margin-bottom: 10px;
+}
+
+.stat-text {
+    color: rgba(255, 255, 255, .55);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+/* =========================
+   LINKS CARD
+========================= */
+
+.story-links-card {
+    background: rgba(12, 22, 14, .45);
+    border: 1px solid rgba(184, 151, 90, .15);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+}
+
+.story-links-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    color: #f5f0e8;
+    margin-bottom: 25px;
+}
+
+.story-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.story-links a {
+    color: #d4b27a;
+    text-decoration: none;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.story-links a:hover {
+    color: #f5f0e8;
+    transform: translateX(6px);
+}
+
+.story-links-card p {
+    color: rgba(255, 255, 255, .70);
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* =========================
+   HOVER EFFECTS
+========================= */
+
+.story-intro-card:hover,
+.story-main-card:hover,
+.story-links-card:hover,
+.stat-card:hover {
+    border-color: rgba(184, 151, 90, .35);
+    transition: .4s;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px) {
+
+    .story-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .story-heading {
+        font-size: 64px;
+    }
+
+    .story-main-card h2 {
+        font-size: 44px;
+    }
+}
+
+@media(max-width:768px) {
+
+    .story-section {
+        padding: 90px 0;
+    }
+
+    .story-heading {
+        font-size: 48px;
+    }
+
+    .story-main-card h2 {
+        font-size: 38px;
+    }
+
+    .story-video-box {
+        height: 300px;
+    }
+
+    .story-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .story-links {
+        grid-template-columns: 1fr;
+    }
+
+    .story-intro-card,
+    .story-main-card,
+    .story-links-card {
+        padding: 28px;
+    }
+}
+
+/* The Plant Store Section */
+.the-plant-store {
+
+    width: 90%;
+    max-width: 1600px;
+
+    margin: 120px auto;
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: flex-start;
+}
+
+/* Shop Content */
+.store-stuff {
+
+    flex: 1;
+
+    background:
+        rgba(12, 22, 14, .40);
+
+    backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(184, 151, 90, .15);
+
+    border-radius: 30px;
+
+    padding: 50px;
+}
+
+/* Top Bar */
+.search-bar-on-top {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.search-bar-on-top input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 30%;
+    font-size: 14px;
+    left: -10%;
+    position: relative;
+    text-align: center;
+}
+
+.filter-bar {
+
+    max-width: 850px;
+
+    margin: 0 auto 60px auto;
+}
+
+.search-input {
+
+    width: 100%;
+
+    height: 60px;
+
+    padding: 0 25px;
+
+    background:
+        rgba(255, 255, 255, .05);
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    border-radius: 14px;
+
+    color: #f5f0e8;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.search-input::placeholder {
+
+    color:
+        rgba(255, 255, 255, .45);
+}
+
+.search-input:focus {
+
+    outline: none;
+
+    border-color: #b8975a;
+}
+
+.filter-row {
+
+    display: flex;
+
+    gap: 15px;
+}
+
+.category-select {
+    flex: 1;
+
+    height: 54px;
+
+    padding: 0 18px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(184, 151, 90, 0.35);
+
+    border-radius: 16px;
+
+    color: #f5f0e8;
+
+    font-family: 'Jost', sans-serif;
+
+    font-size: 14px;
+
+    backdrop-filter: blur(12px);
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.category-select:focus {
+
+    outline: none;
+
+    border-color: #b8975a;
+}
+
+/* Dropdown items */
+.category-select option {
+    background: #0e1b12;
+
+    color: #f5f0e8;
+
+    padding: 12px;
+}
+
+/* Hover/Focus */
+.category-select:focus {
+    border-color: #b8975a;
+
+    box-shadow:
+        0 0 0 3px rgba(184, 151, 90, .15),
+        0 0 25px rgba(184, 151, 90, .12);
+}
+
+.category-select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8975a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+
+    background-position: right 18px center;
+
+    padding-right: 45px;
+}
+
+.filter-btn {
+
+    height: 52px;
+
+    padding: 0 28px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #b8975a;
+
+    color: #1a2e1e;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .35s ease;
+}
+
+.filter-btn:hover {
+
+    background: #d4b27a;
+
+    transform: translateY(-2px);
+}
+
+.clear-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 52px;
+
+    padding: 0 25px;
+
+    text-decoration: none;
+
+    border-radius: 14px;
+
+    color: #f5f0e8;
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    background:
+        rgba(255, 255, 255, .04);
+}
+
+/* Plant Cards */
+.plant-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 35px;
+}
+
+.plant-box {
+
+    background:
+        rgba(255, 255, 255, .04);
+
+    border:
+        1px solid rgba(184, 151, 90, .12);
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    transition: .4s ease;
+
+    backdrop-filter: blur(12px);
+
+    height: 90%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-height: 380px;
+}
+
+.plant-box:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(212, 178, 122, .35);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .25);
+}
+
+.plant-box img {
+
+    width: 250px;
+
+    height: 260px;
+
+    object-fit: contain;
+
+    margin: auto;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+
+    transition: .4s ease;
+}
+
+.plant-box:hover img {
+
+    transform: scale(1.06);
+}
+
+.plant-buddy-name {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 26px;
+
+    font-weight: 400;
+
+    color: #f5f0e8;
+
+    line-height: 1.1;
+
+    margin-top: 20px;
+
+    margin-bottom: 16px;
+
+    text-align: center;
+
+    letter-spacing: .5px;
+}
+
+.plant-price-tag {
+
+    color: #d4b27a;
+
+    font-size: 18px;
+
+    margin-bottom: 18px;
+
+    font-weight: 500;
+}
+
+.plant-bottom-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.plant-price-tag {
+    font-family: 'Jost', sans-serif;
+    color: #d4b27a;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.cart-btn {
+    width: 100%;
+    max-width: 160px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #b8975a;
+
+    color: #1a2e1e;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.cart-btn:hover {
+
+    background: red;
+
+    transform: translateY(-2px);
+}
+
+.plant-box button {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #b8975a;
+
+    color: #1a2e1e;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .35s ease;
+}
+
+.plant-box button:hover {
+
+    background: #d4b27a;
+}
+
+/* ==========================================
+   VANVRINDHA SUPERPOWERS
+========================================== */
+
+.our-superpowers {
+    width: 90%;
+    max-width: 1500px;
+
+    margin: 120px auto;
+
+    text-align: center;
+
+    position: relative;
+}
+
+/* ---------- Header ---------- */
+
+.section-header {
+    margin-bottom: 70px;
+}
+
+.section-eyebrow {
+    display: block;
+
+    color: #b8975a;
+
+    font-size: 25px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    font-family: 'Jost', sans-serif;
+}
+
+.power-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3rem, 4vw, 4.8rem);
+
+    font-weight: 300;
+
+    color: #f5f0e8;
+
+    margin-bottom: 20px;
+
+    line-height: 1.1;
+}
+
+.power-subtitle {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: rgba(255, 255, 255, .60);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+/* ---------- Grid ---------- */
+
+.superpower-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+}
+
+/* ---------- Cards ---------- */
+
+.power-card {
+    position: relative;
+
+    padding: 45px 35px;
+
+    text-align: left;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    background:
+        rgba(12, 22, 14, .45);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(184, 151, 90, .15);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+/* subtle glow */
+
+.power-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -100px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(184, 151, 90, .08),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+.power-card:hover {
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(212, 178, 122, .35);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .35);
+}
+
+/* ---------- Number ---------- */
+
+.power-number {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 4rem;
+
+    font-weight: 400;
+
+    color: #d4b27a;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+/* ---------- Heading ---------- */
+
+.power-word {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 2rem;
+
+    font-weight: 400;
+
+    color: #f5f0e8;
+
+    margin-bottom: 18px;
+}
+
+/* ---------- Description ---------- */
+
+.power-words {
+    color:
+        rgba(255, 255, 255, .65);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    font-weight: 300;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px) {
+
+    .our-superpowers {
+        margin: 80px auto;
+    }
+
+    .power-card {
+        padding: 35px 28px;
+    }
+
+    .power-number {
+        font-size: 3rem;
+    }
+
+    .power-word {
+        font-size: 1.6rem;
+    }
+}
+
+/* ==========================================
+   VANVRINDHA LOCATION SECTION
+========================================== */
+
+.find-us-section {
+
+    width: 90%;
+    max-width: 1500px;
+
+    margin: 120px auto;
+
+    position: relative;
+}
+
+.find-us-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 55px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(12, 22, 14, .45);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(184, 151, 90, .15);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .35);
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+/* Decorative glow */
+
+.find-us-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    top: -200px;
+    left: -200px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(184, 151, 90, .08),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   LEFT CONTENT
+========================================== */
+
+.find-us-section {
+    margin-bottom: 350px;
+}
+
+.find-us-content {
+
+    flex: 1;
+
+    position: relative;
+    z-index: 2;
+}
+
+.find-eyebrow {
+
+    display: block;
+
+    color: #b8975a;
+
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    font-family: 'Jost', sans-serif;
+}
+
+.find-title {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3rem, 4vw, 4.5rem);
+
+    font-weight: 300;
+
+    color: #f5f0e8;
+
+    margin-bottom: 20px;
+
+    line-height: 1.1;
+}
+
+.find-divider {
+
+    width: 60px;
+    height: 1px;
+
+    background: #b8975a;
+
+    opacity: .7;
+
+    margin-bottom: 25px;
+}
+
+.find-description {
+
+    max-width: 520px;
+
+    color:
+        rgba(255, 255, 255, .65);
+
+    line-height: 1.9;
+
+    font-size: 15px;
+
+    margin-bottom: 35px;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.location-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    text-decoration: none;
+
+    padding: 18px 30px;
+
+    background: #b8975a;
+
+    color: #1a2e1e;
+
+    border-radius: 50px;
+
+    font-family: 'Jost', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    transition: .35s ease;
+}
+
+.location-btn:hover {
+
+    background: #d4b27a;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(184, 151, 90, .25);
+}
+
+/* ==========================================
+   MAP
+========================================== */
+
+.map-preview {
+
+    flex: 1;
+
+    min-width: 420px;
+
+    position: relative;
+}
+
+.map-preview iframe {
+
+    width: 100%;
+
+    height: 380px;
+
+    border: none;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .25);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1000px) {
+
+    .find-us-card {
+
+        flex-direction: column;
+
+        padding: 40px;
+    }
+
+    .find-us-content {
+
+        text-align: center;
+    }
+
+    .find-divider {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .map-preview {
+
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .map-preview iframe {
+
+        height: 300px;
+    }
+}
+
+/* ==========================================
+   VANVRINDHA CONTACT SECTION
+========================================== */
+
+.chat-with-us {
+    width: 90%;
+    max-width: 1400px;
+
+    margin: -120px auto 120px auto;
+    /* lifts section upward */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+
+    padding: 90px 80px;
+
+    position: relative;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background:
+        rgba(8, 18, 12, .55);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(184, 151, 90, .15);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, .45);
+}
+
+/* decorative glow */
+
+.chat-with-us::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    left: -250px;
+
+    background:
+        radial-gradient(circle,
+            rgba(184, 151, 90, .12),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+.chat-with-us::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    bottom: -250px;
+    right: -250px;
+
+    background:
+        radial-gradient(circle,
+            rgba(92, 187, 143, .10),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.chat-left {
+    flex: 1;
+
+    position: relative;
+    z-index: 2;
+}
+
+.chat-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3rem, 4vw, 4.8rem);
+
+    line-height: 1.1;
+
+    color: #f5f0e8;
+
+    font-weight: 300;
+
+    max-width: 520px;
+
+    margin-bottom: 25px;
+}
+
+.chat-subtitle {
+    max-width: 500px;
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, .65);
+
+    font-family: 'Jost', sans-serif;
+}
+
+/* ==========================================
+   FORM SIDE
+========================================== */
+
+.chat-right {
+    width: 500px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.chat-box-input,
+.chat-box-area {
+    width: 100%;
+
+    padding: 18px 22px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    background:
+        rgba(255, 255, 255, .04);
+
+    backdrop-filter: blur(10px);
+
+    color: #f5f0e8;
+
+    font-size: 15px;
+
+    transition: .35s ease;
+}
+
+.chat-box-area {
+    min-height: 140px;
+    resize: none;
+}
+
+.chat-box-input::placeholder,
+.chat-box-area::placeholder {
+    color: rgba(255, 255, 255, .45);
+}
+
+.chat-box-input:focus,
+.chat-box-area:focus {
+    outline: none;
+
+    border-color: #b8975a;
+
+    background:
+        rgba(255, 255, 255, .07);
+
+    box-shadow:
+        0 0 25px rgba(184, 151, 90, .15);
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.send-it-button {
+    margin-top: 10px;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #b8975a;
+
+    color: #122015;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .35s ease;
+}
+
+.send-it-button:hover {
+    background: #d4b27a;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(184, 151, 90, .30);
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:1000px) {
+
+    .chat-with-us {
+        flex-direction: column;
+
+        gap: 50px;
+
+        padding: 60px 30px;
+
+        margin: -60px auto 80px auto;
+    }
+
+    .chat-left {
+        text-align: center;
+    }
+
+    .chat-title {
+        max-width: none;
+    }
+
+    .chat-right {
+        width: 100%;
+    }
+}
+
+/*
+    Small screen friendly
+*/
+@media (max-width: 992px) {
+    .vine-content {
+        position: relative;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        padding: 4px 25px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .branch-nav,
+    .gardener-actions {
+        margin-top: 10px;
+    }
+}
+
+
+.user-welcome {
+    color: #b8975a;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 15px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.logout-btn {
+    color: black;
+    text-decoration: none;
+    background: #ddc08a;
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #b8975a;
+}
+
+.login-btn,
+.signup-btn {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 600;
+}

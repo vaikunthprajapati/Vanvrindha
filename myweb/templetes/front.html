@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/font.css">
+  <title>Vanvrindha</title>
+</head>
+
+<body>
+
+  <!-- Full-screen background video -->
+  <div class="bg-video-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="/static/videos/vanvrindha intro video.mp4" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
+  </div>
+
+  <!-- Top navigation bar -->
+  <header class="site-header">
+    <div class="logo-mark">
+      <span class="logo-leaf">✦</span>
+      <span class="logo-name">VANVRINDHA</span>
+    </div>
+    <nav class="site-nav">
+      <a href="{% url 'founder' %}" class="founder-link">Meet The Founder</a>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
+  <main class="hero">
+
+    <!-- Left — Brand identity -->
+    <div class="hero-left">
+      <div class="eyebrow">RARE · CURATED · LIVING</div>
+      <h1 class="brand-name">
+        <span class="brand-line">Van</span>
+        <span class="brand-line italic-line">vrindha</span>
+      </h1>
+      <div class="divider-line"></div>
+      <p class="tagline">
+        Botanical luxury for spaces that breathe.<br>
+        Each plant — a living sculpture.
+      </p>
+    </div>
+
+    <!-- Right — Action panel -->
+    <div class="hero-right">
+
+      <!-- Animated tagline cycling words -->
+      <div class="animated-tag">
+        <span class="tag-static">Where nature meets</span>
+        <span class="tag-cycle" id="tagCycle">elegance</span>
+      </div>
+
+      <div class="cta-group">
+        <a href="{% url 'signin' %}" class="cta-btn cta-primary">
+          <span>Enter the Garden</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="{% url 'signup' %}" class="cta-btn cta-secondary">
+          <span>Begin Your Journey</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <p class="auth-hint">New to Vanvrindha? <a href="{% url 'signup' %}" class="inline-link">Create an account</a></p>
+
+      <div class="bottom-stat-row">
+        <div class="stat-item">
+          <span class="stat-num">200+</span>
+          <span class="stat-label">Rare Species</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">12</span>
+          <span class="stat-label">Expert Curators</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">6K+</span>
+          <span class="stat-label">Happy Homes</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom scroll hint -->
+  <div class="scroll-hint">
+    <span class="scroll-line"></span>
+    <span class="scroll-label">EXPLORE</span>
+  </div>
+
+  <script>
+    const words = ['elegance', 'intention', 'serenity', 'life', 'luxury', 'nature'];
+    let i = 0;
+    const el = document.getElementById('tagCycle');
+    setInterval(() => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(8px)';
+      setTimeout(() => {
+        i = (i + 1) % words.length;
+        el.textContent = words[i];
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      }, 400);
+    }, 2800);
+  </script>
+
+</body>
+
+</html>

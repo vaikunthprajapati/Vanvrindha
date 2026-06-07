@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Checkout</title>
+
+    <link rel="stylesheet" href="/static/css/checkout.css">
+
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <div class="checkout-card">
+
+            <h1>Checkout</h1>
+
+            <form method="post">
+
+                {% csrf_token %}
+
+                <label>Full Name</label>
+                <input type="text" name="fullname" required>
+
+                <label>Mobile Number</label>
+                <input type="text" name="phone" required>
+
+                <label>Delivery Address</label>
+                <textarea name="address" rows="5" required></textarea>
+
+                <div class="total-box">
+
+                    <h2>
+                        Grand Total : ₹{{ total }}
+                    </h2>
+
+                </div>
+
+                <button class="place-order-btn">
+
+                    Place Order
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

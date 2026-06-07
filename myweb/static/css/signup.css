@@ -1,0 +1,428 @@
+/* ==========================================
+   VANVRINDHA — signup.css
+   ========================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #f5f0e8;
+    --gold: #b8975a;
+    --gold-light: #d4b27a;
+    --green-deep: #1a2e1e;
+    --white-60: rgba(255, 255, 255, 0.60);
+    --white-30: rgba(255, 255, 255, 0.30);
+    --white-08: rgba(255, 255, 255, 0.08);
+    --overlay: rgba(12, 22, 14, 0.68);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Jost', sans-serif;
+    color: var(--cream);
+}
+
+/* ── Background Video ── */
+.bg-video-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-video-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65) saturate(0.75);
+}
+
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay);
+}
+
+/* ── Header ── */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 56px;
+    background: linear-gradient(to bottom, rgba(12, 22, 14, 0.6), transparent);
+}
+
+.logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-leaf {
+    color: var(--gold);
+    font-size: 18px;
+    animation: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logo-name {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: var(--cream);
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--white-60);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--gold-light);
+}
+
+.founder-link {
+    text-decoration: none;
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    padding: 9px 22px;
+    border: 1px solid rgba(212, 178, 122, 0.25);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    transition: 0.35s;
+}
+
+.founder-link:hover {
+    color: white;
+    border-color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(212, 178, 122, 0.2);
+}
+
+/* ── Main Layout ── */
+.auth-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 72px;
+    gap: 40px;
+}
+
+/* ── Left Side ── */
+.auth-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeSlideUp 1s ease both;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eyebrow {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: var(--gold);
+    margin-bottom: 24px;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.92;
+    margin-bottom: 28px;
+}
+
+.brand-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(62px, 7.5vw, 108px);
+    font-weight: 300;
+    color: var(--cream);
+    display: block;
+}
+
+.italic-line {
+    font-style: italic;
+    color: var(--gold-light);
+    margin-top: -6px;
+}
+
+.divider-line {
+    width: 56px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 24px;
+}
+
+.tagline {
+    max-width: 420px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.85;
+    color: var(--white-60);
+}
+
+/* ── Right Side / Form Card ── */
+.auth-right {
+    width: 500px;
+    flex-shrink: 0;
+    animation: fadeSlideUp 1s 0.25s ease both;
+}
+
+.form-card {
+    background: rgba(12, 22, 14, 0.5);
+    border: 1px solid rgba(184, 151, 90, 0.18);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 2px;
+    padding: 42px 44px;
+}
+
+/* Form Header */
+.form-top {
+    margin-bottom: 28px;
+}
+
+.form-subtitle {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+.form-top h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 8px;
+}
+
+.form-description {
+    color: var(--white-60);
+    font-size: 13px;
+    line-height: 1.65;
+    font-weight: 300;
+}
+
+/* Form Fields */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.signup-form input,
+.signup-form select {
+    height: 52px;
+    padding: 0 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    width: 100%;
+}
+
+.signup-form input::placeholder {
+    color: rgba(255, 255, 255, 0.30);
+}
+
+.signup-form select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8975a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    padding-right: 44px;
+}
+
+.signup-form select option {
+    background: #1a2e1e;
+    color: var(--cream);
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+    border-color: rgba(212, 178, 122, 0.55);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* Submit Button */
+.signup-btn {
+    margin-top: 6px;
+    height: 54px;
+    border: none;
+    border-radius: 2px;
+    background: var(--gold);
+    color: var(--green-deep);
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.35s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.signup-btn:hover {
+    background: var(--gold-light);
+    transform: translateX(4px);
+}
+
+/* Footer Link */
+.auth-footer {
+    margin-top: 22px;
+    text-align: center;
+    color: var(--white-30);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.auth-footer a {
+    color: var(--gold-light);
+    text-decoration: none;
+    margin-left: 6px;
+    transition: color 0.2s;
+}
+
+.auth-footer a:hover {
+    color: var(--cream);
+}
+
+/* ── Stats Row ── */
+.bottom-stat-row {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    animation: fadeSlideUp 1s 0.5s ease both;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--gold-light);
+}
+
+.stat-label {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--white-30);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(184, 151, 90, 0.2);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+    .auth-container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 110px 30px 90px;
+        overflow-y: auto;
+        gap: 40px;
+    }
+
+    body {
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .auth-left {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .auth-right {
+        width: 100%;
+        max-width: 540px;
+    }
+
+    .bottom-stat-row {
+        display: none;
+    }
+
+    .site-header {
+        padding: 22px 30px;
+    }
+}

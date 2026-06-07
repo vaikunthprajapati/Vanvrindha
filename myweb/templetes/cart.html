@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>My Cart</title>
+
+    <link rel="stylesheet" href="/static/css/cart.css">
+
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <div class="cart-container">
+
+            <div class="cart-header">
+
+                <h1>🛒 My Cart</h1>
+
+                <a href="/homepage">
+                    Continue Shopping
+                </a>
+
+            </div>
+
+            {% if cart_items %}
+
+            {% for item in cart_items %}
+
+            <div class="cart-item">
+
+                <img src="/media/{{ item.product.4 }}" width="120" onerror="this.src='/static/images/defaultplant.jpg'">
+
+                <div class="info">
+
+                    <h2>{{ item.product.1 }}</h2>
+
+                    <p class="price">
+                        ₹{{ item.product.3 }}
+                    </p>
+
+                    <div class="qty-box">
+
+                        <a class="qty-btn" href="/master/decreasequantity/{{ item.product.0 }}">
+                            −
+                        </a>
+
+                        <span class="qty-number">
+                            {{ item.qty }}
+                        </span>
+
+                        <a class="qty-btn" href="/master/increasequantity/{{ item.product.0 }}">
+                            +
+                        </a>
+
+                    </div>
+
+                    <p>
+                        Subtotal : ₹{{ item.subtotal }}
+                    </p>
+
+                </div>
+
+                <div class="actions">
+
+                    <a class="remove-btn" href="/master/removefromcart/{{ item.product.0 }}">
+                        Remove
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+            <div class="total-box">
+
+                <h3>
+                    Items : {{ item_count }}
+                </h3>
+
+                <h2>
+                    Grand Total : ₹{{ total }}
+                </h2>
+
+            </div>
+
+            <a href="/master/checkout">
+
+                <button class="checkout-btn">
+
+                    Proceed To Checkout
+
+                </button>
+
+            </a>
+
+            {% else %}
+
+            <div class="empty-cart">
+
+                <h2>
+                    Your cart is empty
+                </h2>
+
+                <p>
+                    Add some beautiful plants 🌿
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

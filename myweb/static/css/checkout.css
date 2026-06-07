@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background-image: url("/static/images/nature.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: Arial, sans-serif;
+}
+
+.overlay {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+.checkout-card {
+
+    width: 700px;
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: white;
+}
+
+.checkout-card h1 {
+
+    margin-bottom: 30px;
+
+    font-size: 42px;
+}
+
+.checkout-card label {
+
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+.checkout-card input,
+.checkout-card textarea {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    outline: none;
+}
+
+.checkout-card textarea {
+
+    resize: none;
+}
+
+.total-box {
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.total-box h2 {
+
+    color: #56d3a6;
+}
+
+.place-order-btn {
+
+    width: 100%;
+
+    height: 60px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #56d3a6;
+
+    color: black;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}

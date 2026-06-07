@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Order Successful</title>
+
+    <link rel="stylesheet" href="/static/css/ordersuccess.css">
+
+</head>
+
+<body>
+
+    <div class="success-container">
+
+        <div class="success-card">
+
+            <div class="checkmark">
+                ✓
+            </div>
+
+            <h1>
+                Order Placed Successfully
+            </h1>
+
+            <p>
+                Thank you for shopping with Van Vrinda.
+                Your order has been received and is being processed.
+            </p>
+
+            <div class="btn-group">
+
+                <a href="/homepage" class="home-btn">
+                    Continue Shopping
+                </a>
+
+                {% if user.is_superuser %}
+
+                <a href="/master/orders" class="orders-btn">
+                    View Orders
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+/* ==========================================
+   VANVRINDHA — signin.css
+   ========================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #f5f0e8;
+    --gold: #b8975a;
+    --gold-light: #d4b27a;
+    --green-deep: #1a2e1e;
+
+    --white-60: rgba(255, 255, 255, .60);
+    --white-30: rgba(255, 255, 255, .30);
+
+    --overlay: rgba(12, 22, 14, .68);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    font-family: 'Jost', sans-serif;
+    color: var(--cream);
+}
+
+/* ==========================
+   Background
+========================== */
+
+.bg-video-wrap{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+}
+
+.bg-video-wrap video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    filter:
+    brightness(.55)
+    saturate(.75);
+}
+
+.bg-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(12,22,14,.72),
+        rgba(12,22,14,.55)
+    );
+}
+/* ==========================
+   Success Message
+========================== */
+
+.success-message {
+
+    position: fixed;
+
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 999;
+
+    padding: 18px 30px;
+
+    background: rgba(184, 151, 90, .12);
+
+    border: 1px solid rgba(184, 151, 90, .35);
+
+    backdrop-filter: blur(20px);
+
+    color: var(--cream);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+
+    border-radius: 4px;
+
+    animation: fadeSuccess .8s ease;
+}
+
+@keyframes fadeSuccess {
+
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* ==========================
+   Invalid Login credential message
+========================== */
+.message-box {
+    width: 100%;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.message-box.error {
+    background: rgba(180, 30, 30, 0.15);
+    border: 1px solid rgba(255, 100, 100, 0.4);
+    color: #ffb3b3;
+}
+
+.message-box.success {
+    background: rgba(184, 151, 90, 0.15);
+    border: 1px solid rgba(184, 151, 90, 0.5);
+    color: #d8c08a;
+}
+
+/* ==========================
+   Main Container
+========================== */
+
+.box1 {
+
+    width: 500px;
+
+    position: absolute;
+
+    top: 50%;
+    right: 8%;
+
+    transform: translateY(-50%);
+
+    background: rgba(12, 22, 14, .45);
+
+    border: 1px solid rgba(184, 151, 90, .18);
+
+    backdrop-filter: blur(20px);
+
+    padding: 50px;
+
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+/* ==========================
+   Welcome
+========================== */
+
+.box1 h1 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 52px;
+
+    font-weight: 300;
+
+    color: var(--cream);
+
+    margin-bottom: 12px;
+}
+
+.box1 h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 1px;
+
+    margin-top: 14px;
+
+    background: var(--gold);
+}
+
+/* ==========================
+   Form
+========================== */
+
+.signin-form {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin-top: 35px;
+}
+
+.signin-form input {
+
+    height: 56px;
+
+    padding: 0 18px;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    background: rgba(255, 255, 255, .04);
+
+    color: var(--cream);
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.signin-form input::placeholder {
+    color: var(--white-30);
+}
+
+.signin-form input:focus {
+
+    border-color: rgba(212, 178, 122, .55);
+
+    background: rgba(255, 255, 255, .08);
+}
+
+/* ==========================
+   Sign In Button
+========================== */
+
+.signin-form button {
+
+    height: 56px;
+
+    border: none;
+
+    background: var(--gold);
+
+    color: var(--green-deep);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .35s;
+}
+
+.signin-form button:hover {
+
+    background: var(--gold-light);
+
+    transform: translateX(4px);
+}
+
+/* ==========================
+   Signup Link
+========================== */
+
+.signup-link {
+
+    margin-top: 28px;
+
+    text-align: center;
+}
+
+.signup-link p {
+
+    color: var(--white-30);
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+}
+
+.signup-link a {
+
+    text-decoration: none;
+}
+
+.signup-link button {
+
+    width: 100%;
+
+    height: 52px;
+
+    background: transparent;
+
+    border: 1px solid rgba(184, 151, 90, .35);
+
+    color: var(--gold-light);
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.signup-link button:hover {
+
+    background: rgba(184, 151, 90, .08);
+
+    border-color: var(--gold);
+}
+
+/* ==========================
+   Side Branding
+========================== */
+
+.box3 {
+
+    position: absolute;
+
+    left: 8%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 40%;
+}
+
+.box3_img {
+
+    display: none;
+}
+
+.date-icon {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.date-icon span:first-child {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 110px;
+
+    line-height: .9;
+
+    color: var(--cream);
+
+    font-weight: 300;
+}
+
+.date-icon span:last-child {
+
+    color: var(--gold-light);
+
+    font-size: 110px;
+
+    letter-spacing: 8px;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:1100px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .box3 {
+        display: none;
+    }
+
+    .box1 {
+
+        position: relative;
+
+        width: 90%;
+
+        max-width: 520px;
+
+        margin: 120px auto;
+
+        right: auto;
+        top: auto;
+
+        transform: none;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Product</title>
+
+    <link rel="stylesheet" href="/static/css/addproduct.css">
+
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <div class="form-card">
+
+            <h1>Edit Plant</h1>
+
+            <form method="post">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+
+                    <label>Plant Name</label>
+
+                    <input type="text" name="pname" value="{{ product.1 }}">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Description</label>
+
+                    <textarea name="description">{{ product.2 }}</textarea>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Price</label>
+
+                    <input type="text" name="price" value="{{ product.3 }}">
+
+                </div>
+
+                <button class="submit-btn">
+                    Update Product
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

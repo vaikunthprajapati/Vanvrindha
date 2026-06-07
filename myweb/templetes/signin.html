@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/static/css/signin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Michroma&family=Monoton&display=swap"
+        rel="stylesheet">
+    <title>Sign In</title>
+</head>
+
+<body>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="message-box {{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="success-message">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="bg-video-wrap">
+        <video autoplay muted loop playsinline>
+            <source src="{% static 'videos/vanvrindha intro video.mp4' %}" type="video/mp4">
+        </video>
+        <div class="bg-overlay"></div>
+    </div>
+    <nav class="menu">
+    </nav>
+
+    <div class="box1 box">
+
+        <h1>Welcome </h1>
+
+        <form method="post" class="signin-form">
+
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Username">
+
+            <input type="password" name="password" placeholder="Password">
+
+            <button type="submit">
+                Sign In
+            </button>
+
+        </form>
+        <div class="signup-link">
+            <p>Don't have an account?</p><a href="{% url 'signup' %}"><button>SignUp</button></a>
+        </div>
+    </div>
+
+    <div class="box3">
+        <div class="box3_img">
+            <img src="/static/images/baby-plant.png" alt="">
+        </div>
+        <div class="box3_overlay">
+            <div class="date-icon">
+                <span>Enter The Garden 🌿</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

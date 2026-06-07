@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%" id="vanvrindha-logo">
+  <defs>
+    <!-- Smooth gradient for the leaf accents -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e7d32" />
+      <stop offset="100%" stop-color="#81c784" />
+    </linearGradient>
+  </defs>
+
+  <!-- BACKGROUND: Can be targeted/removed using CSS (#logo-bg) -->
+  <g id="logo-bg">
+    <rect width="100%" height="100%" fill="#ffffff"/>
+    <circle cx="400" cy="150" r="130" fill="#f1f8e9" opacity="0.7"/>
+  </g>
+
+  <!-- LOGO GRAPHICS & TYPOGRAPHY -->
+  <g id="logo-content" transform="translate(100, 75)">
+    
+    <!-- Decorative Intertwined Vine/Vein Base Line underneath the text -->
+    <path d="M 10,130 C 150,135 450,125 580,130 C 590,130 600,125 595,115 C 590,105 570,115 550,120" 
+          fill="none" stroke="#1b5e20" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 30,135 C 200,138 400,132 540,133" 
+          fill="none" stroke="#81c784" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Main Typographic Elements with hand-drawn vein/leaf styling -->
+    <g fill="#1b5e20" font-family="'Helvetica Neue', 'Segoe UI', Arial, sans-serif" font-weight="900" font-size="76" letter-spacing="2">
+      
+      <!-- V with an extended leaf wing -->
+      <g>
+        <text x="10" y="110">V</text>
+        <!-- Leaf growing off the left top of V -->
+        <path d="M 12,50 C -5,35 -5,15 15,10 C 25,25 25,40 22,48 Z" fill="url(#leafGrad)" />
+        <path d="M 12,50 C 5,35 10,22 15,10" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.7" />
+      </g>
+
+      <text x="65" y="110">a</text>
+      <text x="115" y="110">n</text>
+
+      <!-- V with an organic vine curve -->
+      <g>
+        <text x="165" y="110">v</text>
+        <path d="M 197,110 C 205,125 220,135 240,130" fill="none" stroke="#1b5e20" stroke-width="6" stroke-linecap="round"/>
+      </g>
+
+      <!-- r with a small leaf bud -->
+      <g>
+        <text x="215" y="110">r</text>
+        <circle cx="252" cy="60" r="5" fill="#81c784" />
+      </g>
+
+      <text x="250" y="110">i</text>
+      <text x="280" y="110">n</text>
+      
+      <!-- d with an extended looping stem -->
+      <g>
+        <path d="M 382,45 C 382,20 400,10 415,25 C 410,40 395,45 382,45 Z" fill="url(#leafGrad)"/>
+        <text x="335" y="110">d</text>
+      </g>
+
+      <!-- h with a leaf structure inside the loop -->
+      <g>
+        <text x="390" y="110">h</text>
+        <path d="M 422,90 Q 435,75 442,90 Q 435,100 422,90 Z" fill="#81c784" opacity="0.8"/>
+      </g>
+
+      <!-- Final a sprouting into a flourishing leaf flourish -->
+      <g>
+        <text x="445" y="110">a</text>
+        <!-- Flourish Leaf trailing off the end -->
+        <path d="M 495,105 C 530,105 560,75 550,45 C 520,55 500,85 495,105 Z" fill="url(#leafGrad)" />
+        <!-- Leaf Veins -->
+        <path d="M 495,105 C 515,85 530,70 550,45" fill="none" stroke="#ffffff" stroke-width="1.5" />
+        <path d="M 515,85 Q 525,80 535,82" fill="none" stroke="#ffffff" stroke-width="1" />
+        <path d="M 523,76 Q 530,68 542,68" fill="none" stroke="#ffffff" stroke-width="1" />
+      </g>
+    </g>
+
+    <!-- Subtitle for the plant shop context -->
+    <text x="175" y="155" fill="#2e7d32" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="8" opacity="0.9">PLANT BOUTIQUE</text>
+  </g>
+</svg>

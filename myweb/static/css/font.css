@@ -1,0 +1,392 @@
+/* ================================================
+   VANVRINDHA — font.css
+   Luxury Botanical Brand · Front Page Styles
+   ================================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream:     #f5f0e8;
+  --cream-dim: rgba(245, 240, 232, 0.55);
+  --gold:      #b8975a;
+  --gold-light:#d4b27a;
+  --green-deep:#1a2e1e;
+  --green-mid: #2d4a32;
+  --white:     #ffffff;
+  --white-60:  rgba(255,255,255,0.60);
+  --white-30:  rgba(255,255,255,0.30);
+  --white-10:  rgba(255,255,255,0.10);
+  --overlay:   rgba(12, 22, 14, 0.62);
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Jost', sans-serif;
+  color: var(--cream);
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ─── Background Video ─── */
+.bg-video-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.bg-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) brightness(0.85);
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+}
+
+/* ─── Header ─── */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 56px;
+  background: linear-gradient(to bottom, rgba(12,22,14,0.55) 0%, transparent 100%);
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-leaf {
+  font-size: 18px;
+  color: var(--gold);
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.logo-name {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 13px;
+  letter-spacing: 5px;
+  color: var(--cream);
+}
+
+.site-nav {
+  display: flex;
+  gap: 40px;
+}
+/* ─── Hero Layout ─── */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 56px;
+  gap: 0;
+}
+
+/* ─── Left Panel ─── */
+.hero-left {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 80px;
+  animation: fadeSlideUp 1.2s ease both;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 32px;
+}
+
+.brand-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(72px, 9vw, 120px);
+  color: var(--cream);
+  letter-spacing: -1px;
+  display: block;
+}
+
+.italic-line {
+  font-style: italic;
+  color: var(--gold-light);
+  margin-top: -12px;
+}
+
+.divider-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 28px;
+  opacity: 0.7;
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: var(--white-60);
+  max-width: 360px;
+}
+
+/* ─── Right Panel ─── */
+.hero-right {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  padding: 48px 40px;
+  background: rgba(12, 22, 14, 0.42);
+  border: 1px solid rgba(184, 151, 90, 0.18);
+  border-radius: 2px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  animation: fadeSlideUp 1.2s 0.3s ease both;
+}
+
+/* ─── Animated Tagline ─── */
+.animated-tag {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--white-60);
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(184,151,90,0.2);
+  padding-bottom: 20px;
+}
+
+.tag-cycle {
+  color: var(--gold-light);
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ─── CTA Buttons ─── */
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.cta-primary {
+  background: var(--gold);
+  color: var(--green-deep);
+  border: 1px solid var(--gold);
+}
+
+.cta-primary:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateX(4px);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(184,151,90,0.45);
+}
+
+.cta-secondary:hover {
+  background: rgba(184,151,90,0.12);
+  border-color: var(--gold);
+  color: var(--gold-light);
+  transform: translateX(4px);
+}
+
+.btn-arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ─── Auth Hint ─── */
+.auth-hint {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: var(--white-30);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.inline-link {
+  color: var(--gold-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.inline-link:hover {
+  color: var(--cream);
+}
+
+/* ─── Stats Row ─── */
+.bottom-stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(184,151,90,0.15);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.stat-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--white-30);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(184,151,90,0.2);
+}
+
+/* ─── Scroll Hint ─── */
+.scroll-hint {
+  position: fixed;
+  bottom: 36px;
+  left: 56px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeSlideUp 1.2s 0.8s ease both;
+}
+
+.scroll-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+  animation: stretch 2s ease-in-out infinite;
+}
+
+@keyframes stretch {
+  0%, 100% { width: 40px; opacity: 0.5; }
+  50%       { width: 60px; opacity: 0.8; }
+}
+
+.scroll-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--white-30);
+}
+
+.founder-link{
+    text-decoration:none;
+    color:#d4b27a;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:18px;
+    font-style:italic;
+
+    letter-spacing:1px;
+
+    padding:10px 20px;
+
+    border:1px solid rgba(212,178,122,.25);
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:50px;
+
+    transition:.35s ease;
+}
+
+.founder-link:hover{
+    color:white;
+
+    border-color:#d4b27a;
+
+    box-shadow:
+    0 0 20px rgba(212,178,122,.25);
+
+    transform:translateY(-2px);
+}

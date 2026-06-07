@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Orders</title>
+
+    <link rel="stylesheet" href="/static/css/orders.css">
+
+</head>
+
+<body>
+
+    <a href="{% url 'homepage' %}" class="back-home-btn">
+        <i class="fas fa-arrow-left"></i>
+        Home
+    </a>
+
+    <div class="overlay">
+
+        <div class="orders-container">
+            <a href="/homepage"
+                style="display:inline-block; margin-bottom:25px; padding:10px 18px;background:rgba(255,255,255,0.08);
+                                        border:1px solid rgba(255,255,255,0.15); color:white; text-decoration:none; border-radius:12px; backdrop-filter:blur(10px); transition:0.3s;">
+                ← Back to Homepage
+            </a>
+            <h1>
+                📦 Customer Orders
+            </h1>
+
+            <table>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Total</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+
+                </tr>
+
+                {% for o in orders %}
+
+                <tr>
+
+                    <td>{{ o.0 }}</td>
+                    <td>{{ o.2 }}</td>
+                    <td>{{ o.3 }}</td>
+                    <td>{{ o.4|truncatechars:25 }}</td>
+                    <td>₹{{ o.5 }}</td>
+                    <td>{{ o.6|date:"d M Y" }}</td>
+
+                    <td class="status-column">
+
+                        {% if o.7 == "Placed" %}
+
+                        <span class="status-badge placed">
+                            Placed
+                        </span>
+
+                        {% elif o.7 == "Shipped" %}
+
+                        <span class="status-badge shipped">
+                            Shipped
+                        </span>
+
+                        {% elif o.7 == "Out For Delivery" %}
+
+                        <span class="status-badge delivery">
+                            Out For Delivery
+                        </span>
+
+                        {% else %}
+
+                        <span class="status-badge delivered">
+                            Delivered
+                        </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <td class="action-column">
+
+                        {% if o.7 == "Placed" %}
+
+                        <a class="action-btn" href="/master/updateorderstatus/{{ o.0 }}?status=Shipped">
+                            Mark Shipped
+                        </a>
+
+                        {% elif o.7 == "Shipped" %}
+
+                        <a class="action-btn" href="/master/updateorderstatus/{{ o.0 }}?status=Out For Delivery">
+                            Send To Delivery
+                        </a>
+
+                        {% elif o.7 == "Out For Delivery" %}
+
+                        <a class="action-btn" href="/master/updateorderstatus/{{ o.0 }}?status=Delivered">
+                            Mark Delivered
+                        </a>
+
+                        {% else %}
+
+                        <span class="completed-text">
+                            Completed
+                        </span>
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

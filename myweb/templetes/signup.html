@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+  <title>Create Account | Vanvrindha</title>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <div class="bg-video-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="{% static 'videos/vanvrindha intro video.mp4' %}" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-mark">
+      <span class="logo-leaf">✦</span>
+      <span class="logo-name">VANVRINDHA</span>
+    </div>
+    <nav class="site-nav">
+      <a href="{% url 'front' %}" class="nav-link">Home</a>
+      <a href="{% url 'founder' %}" class="founder-link">Meet The Founder</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="auth-container">
+
+    <!-- Left -->
+    <div class="auth-left">
+      <div class="eyebrow">JOIN · GROW · THRIVE</div>
+      <h1 class="brand-name">
+        <span class="brand-line">Begin</span>
+        <span class="brand-line italic-line">Your Journey</span>
+      </h1>
+      <div class="divider-line"></div>
+      <p class="tagline">
+        Become part of a community that values nature,
+        sustainability and mindful living.<br><br>
+        Every account planted today grows into a greener tomorrow.
+      </p>
+    </div>
+
+    <!-- Right -->
+    <div class="auth-right">
+      <div class="form-card">
+
+        <div class="form-top">
+          <div class="form-subtitle">CREATE YOUR ACCOUNT</div>
+          <h2>Welcome to Vanvrindha</h2>
+          <p class="form-description">
+            Create your account and begin exploring a world of
+            curated plants and botanical experiences.
+          </p>
+        </div>
+
+        <form method="post" class="signup-form">
+          {% csrf_token %}
+          <input type="email"    name="email"    placeholder="Email Address"    required>
+          <input type="tel"   name="contact"  placeholder="Contact Number"   required pattern="[0-9]{10}">
+          <input type="text"     name="username" placeholder="Username"         required>
+          <input type="password" name="password" placeholder="Password"         required>
+          <select name="question" required>
+            <option value="">Choose a Security Question</option>
+            <option value="petname">Your First Pet Name?</option>
+            <option value="birthplace">Your Birthplace?</option>
+            <option value="vehicle">Your Vehicle Number?</option>
+            <option value="food">Your Favourite Food?</option>
+          </select>
+          <input type="text" name="answer" placeholder="Answer" required>
+          <button type="submit" class="signup-btn">Create Account →</button>
+        </form>
+
+        <div class="auth-footer">
+          Already have an account?
+          <a href="{% url 'signin' %}">Sign In</a>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Stats -->
+  <div class="bottom-stat-row">
+    <div class="stat-item">
+      <span class="stat-num">200+</span>
+      <span class="stat-label">Rare Species</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">12</span>
+      <span class="stat-label">Expert Curators</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">6K+</span>
+      <span class="stat-label">Happy Homes</span>
+    </div>
+  </div>
+
+</body>
+</html>

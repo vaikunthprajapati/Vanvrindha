@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background-image: url("/static/images/nature.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: Arial, sans-serif;
+}
+
+.overlay {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+}
+
+.location-card {
+
+    width: 1200px;
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    color: white;
+}
+
+.location-card h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.address {
+
+    color: #d8d8d8;
+
+    margin-bottom: 30px;
+
+    font-size: 18px;
+}
+
+.map-box iframe {
+
+    border-radius: 20px;
+}
+
+.direction-btn {
+
+    margin-top: 30px;
+
+    width: 220px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #56d3a6;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
