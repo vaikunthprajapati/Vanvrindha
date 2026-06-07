@@ -289,9 +289,6 @@ Planned improvements include:
 GitHub:
 https://github.com/vaikunthprajapati
 
-LinkedIn:
-(Add your LinkedIn profile here)
-
 ---
 
 # License
