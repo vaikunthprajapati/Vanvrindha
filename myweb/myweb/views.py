@@ -87,7 +87,3 @@ def logoutUser(request):
 
 def addProduct(request):
     return render(request, "addproduct.html")
-
-
-def founder(request):
-    return render(request, "founder.html")

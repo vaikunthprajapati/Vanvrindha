@@ -1,15 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/signup.css' %}">
   <title>Create Account | Vanvrindha</title>
 </head>
+
 <body>
 
   <!-- Background Video -->
@@ -28,7 +32,7 @@
     </div>
     <nav class="site-nav">
       <a href="{% url 'front' %}" class="nav-link">Home</a>
-      <a href="{% url 'founder' %}" class="founder-link">Meet The Founder</a>
+      <a href="https://www.linkedin.com/in/vaikunthprajapati" class="founder-link" target="_blank">Meet The Founder</a>
     </nav>
   </header>
 
@@ -65,10 +69,10 @@
 
         <form method="post" class="signup-form">
           {% csrf_token %}
-          <input type="email"    name="email"    placeholder="Email Address"    required>
-          <input type="tel"   name="contact"  placeholder="Contact Number"   required pattern="[0-9]{10}">
-          <input type="text"     name="username" placeholder="Username"         required>
-          <input type="password" name="password" placeholder="Password"         required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="contact" placeholder="Contact Number" required pattern="[0-9]{10}">
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="password" name="password" placeholder="Password" required>
           <select name="question" required>
             <option value="">Choose a Security Question</option>
             <option value="petname">Your First Pet Name?</option>
@@ -109,4 +113,5 @@
   </div>
 
 </body>
+
 </html>

@@ -13,6 +13,5 @@ urlpatterns = [
     path('signup', signup, name='signup'),
     path('signin', signin, name='signin'),
     path('logout', logoutUser, name='logout'),
-    path('founder', founder, name='founder'),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
