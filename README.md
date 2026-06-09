@@ -1,3 +1,5 @@
+<img src="banner.png" width="100%">
+
 # 🌿 Vanvrindha
 
 A premium botanical e-commerce platform built using Django and MySQL, designed to provide a luxury plant-shopping experience while demonstrating enterprise-level software architecture principles such as Repository Pattern and Service Layer Architecture.
