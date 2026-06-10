@@ -1,1 +1,1 @@
-web: gunicorn myweb.wsgi
+web: cd myweb && gunicorn myweb.wsgi
