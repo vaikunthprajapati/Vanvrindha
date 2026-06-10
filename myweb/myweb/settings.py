@@ -24,10 +24,14 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7f=w$7(m0qst2s(+z86x(7(eu)5l5g^)s-5wad9#6f5*isc-#8'
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.up.railway.app"
+]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -122,6 +126,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[BASE_DIR/'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = (
+    "whitenoise.storage.CompressedManifestStaticFilesStorage"
+)
 
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR/'media/'
